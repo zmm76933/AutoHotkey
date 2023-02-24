@@ -372,7 +372,7 @@ F8::Send {Browser_Back}
     Return
 *Enter Up::
     Send {Blind}{RControl Up}
-    If (A_PriorHotKey = "*Enter" And A_TimeSincePriorHotkey < 1000) {
+    If (A_PriorHotKey = "*Enter" And A_TimeSincePriorHotkey < 200) {
         Send {Blind}{Enter}
     }
     Return
@@ -389,7 +389,7 @@ F8::Send {Browser_Back}
     If (A_PriorHotkey == A_ThisHotkey And A_TimeSincePriorHotkey < 200) {
         If (WinExist("ahk_class CabinetWClass")) {
             WinActivate
-        } Else if ("C:\Windows\explorer.exe") {
+        } Else If ("C:\Windows\explorer.exe") {
             run "C:\Windows\explorer.exe" "C:\Down"
         }
     }
