@@ -49,10 +49,11 @@ is_target()
 ; Act as Enter to Right Control
 is_enter_pressed()
 {
-    If GetKeyState("Enter", "P")
+    If GetKeyState("Enter", "P") {
         Return 1
-    Else
+    } Else {
         Return 0
+    }
 }
 
 ;
@@ -60,13 +61,15 @@ is_enter_pressed()
 ; move cursor backward
 ;
 ^b::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{Left}{RControl Down}
-        Else
+        } Else {
             Send {Left}
+        }
+    }
     Return
 
 ;
@@ -74,13 +77,15 @@ is_enter_pressed()
 ; move cursor backward selecting chars
 ;
 +^b::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}+{Left}{RControl Down}
-        Else
+        } Else {
             Send +{Left}
+        }
+    }
     Return
 
 ;
@@ -88,13 +93,15 @@ is_enter_pressed()
 ; move cursor forward
 ;
 ^f::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{Right}{RControl Down}
-        Else
+        } Else {
             Send {Right}
+        }
+    }
     Return
 
 ;
@@ -102,13 +109,15 @@ is_enter_pressed()
 ; move cursor forward selecting chars
 ;
 +^f::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}+{Right}{RControl Down}
-        Else
+        } Else {
             Send +{Right}
+        }
+    }
     Return
 
 ;
@@ -116,13 +125,15 @@ is_enter_pressed()
 ; move cursor up
 ;
 ^p::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{Up}{RControl Down}
-        Else
+        } Else {
             Send {Up}
+        }
+    }
     Return
 
 ;
@@ -130,13 +141,15 @@ is_enter_pressed()
 ; move cursor up selecting chars
 ;
 +^p::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}+{Up}{RControl Down}
-        Else
+        } Else {
             Send +{Up}
+        }
+    }
     Return
 
 ;
@@ -144,13 +157,15 @@ is_enter_pressed()
 ; move cursor down
 ;
 ^n::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{Down}{RControl Down}
-        Else
+        } Else {
             Send {Down}
+        }
+    }
     Return
 
 ;
@@ -158,13 +173,15 @@ is_enter_pressed()
 ; move cursor down selecting chars
 ;
 +^n::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}+{Down}{RControl Down}
-        Else
+        } Else {
             Send +{Down}
+        }
+    }
     Return
 
 ;
@@ -172,13 +189,15 @@ is_enter_pressed()
 ; delete following char
 ;
 ^d::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{Del}{RControl Down}
-        Else
+        } Else {
             Send {Del}
+        }
+    }
     Return
 
 ;
@@ -186,13 +205,15 @@ is_enter_pressed()
 ; delete previous char(Backspace)
 ;
 ^h::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{Backspace}{RControl Down}
-        Else
+        } Else {
             Send {Backspace}
+        }
+    }
     Return
 
 ;
@@ -200,13 +221,15 @@ is_enter_pressed()
 ; move cursor beginning of current line
 ;
 ^a::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{Home}{RControl Down}
-        Else
+        } Else {
             Send {Home}
+        }
+    }
     Return
 
 ;
@@ -214,13 +237,15 @@ is_enter_pressed()
 ; move cursor beginning of current line selecting chars
 ;
 +^a::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}+{Home}{RControl Down}
-        Else
+        } Else {
             Send +{Home}
+        }
+    }
     Return
 
 ;
@@ -228,13 +253,15 @@ is_enter_pressed()
 ; move cursor end of current line
 ;
 ^e::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}{End}{RControl Down}
-        Else
+        } Else {
             Send {End}
+        }
+    }
     Return
 
 ;
@@ -242,13 +269,15 @@ is_enter_pressed()
 ; move cursor end of current line selecting chars
 ;
 +^e::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}+{End}{RControl Down}
-        Else
+        } Else {
             Send +{End}
+        }
+    }
     Return
 
 ;
@@ -256,13 +285,15 @@ is_enter_pressed()
 ; paste
 ;
 ^y::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
-        If is_enter_pressed()
+    } Else {
+        If is_enter_pressed() {
             Send {RControl Up}^v{RControl Down}
-        Else
+        } Else {
             Send ^v
+        }
+    }
     Return
 
 ;
@@ -270,9 +301,9 @@ is_enter_pressed()
 ; backward_kill_word
 ;
 ^w::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else {
+    } Else {
         If is_enter_pressed() {
             Send {RControl Up}{Shift Down}^{Left}{Shift Up}{RControl Down}
             Sleep 10
@@ -290,9 +321,9 @@ is_enter_pressed()
 ; delete chars from cursor to end of line
 ;
 ^k::
-    If is_target()
+    If is_target() {
           Send %A_ThisHotkey%
-      Else {
+    } Else {
         If is_enter_pressed() {
             Send {RControl Up}{Shift Down}{End}{Shift Up}{RControl Down}
             Sleep 10
@@ -302,17 +333,17 @@ is_enter_pressed()
             Sleep 10
             Send {Del}
         }
-      }
-      Return
+    }
+    Return
 
 ;
 ; <ctrl>u
 ; delete chars from cursor to beginning of line
 ;
 ^u::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else {
+    } Else {
         If is_enter_pressed() {
             Send {RControl Up}{Shift Down}{Home}{Shift Up}{RControl Down}
             Sleep 10
@@ -330,10 +361,11 @@ is_enter_pressed()
 ; select all
 ;
 !a::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
+    } Else {
         Send ^a
+    }
     Return
 
 ;
@@ -341,21 +373,17 @@ is_enter_pressed()
 ; close window
 ;
 !w::
-    If is_target()
+    If is_target() {
         Send %A_ThisHotkey%
-    Else
+    } Else {
         Send ^w
+    }
     Return
 
-; Mouse operation
-F2::Send {Browser_Forward}
-F8::Send {Browser_Back}
-^WheelRight::Send #^{Right}
-^WheelLeft::Send #^{Left}
-!F24::Send !{Esc}
-!+`::Send !+{Esc}
-
-; OneShot Modifier Left Control
+;
+; OneShot Modifier
+; Left control as Escape if post alone
+;
 ~LControl::
     KeyWait, LControl
     Return
@@ -365,7 +393,10 @@ F8::Send {Browser_Back}
     }
     Return
 
-; OneShot Modifier Enter
+;
+; OneShot Modifier
+; Enter as Right Control if post alone
+;
 *Enter::
     Send {Blind}{RControl Down}
     KeyWait, Enter
@@ -377,14 +408,20 @@ F8::Send {Browser_Back}
     }
     Return
 
+;
 ; Windows Terminal
+; double tap Right Shift
+;
 ~RShift Up::
     If (A_PriorHotkey == A_ThisHotkey And A_TimeSincePriorHotkey < 200) {
         Send ^+{F12}
     }
     Return
 
+;
 ; Explorer
+; double tap Right Alt
+;
 ~RAlt Up::
     If (A_PriorHotkey == A_ThisHotkey And A_TimeSincePriorHotkey < 200) {
         If (WinExist("ahk_class CabinetWClass")) {
@@ -394,3 +431,13 @@ F8::Send {Browser_Back}
         }
     }
     Return
+
+;
+; Mouse operation
+;
+F2::Send {Browser_Forward}
+F8::Send {Browser_Back}
+^WheelRight::Send #^{Right}
+^WheelLeft::Send #^{Left}
+!F24::Send !{Esc}
+!+`::Send !+{Esc}
