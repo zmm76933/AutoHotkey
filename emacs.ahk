@@ -384,12 +384,15 @@ is_enter_pressed()
 ; OneShot Modifier
 ; Left control as Escape if post alone
 ;
-~LControl::
-    KeyWait, LControl
+*LControl::
+    Send {LControl Down}
     Return
-~LControl Up::
-    If (A_PriorHotKey = "~LControl" And A_TimeSincePriorHotkey < 200) {
+*LControl Up::
+    Send {LControl Up}
+    If (A_PriorHotKey = "*LControl" And A_TimeSincePriorHotkey < 200) {
+        Suspend On
         Send {Esc}
+        Suspend Off
     }
     Return
 
@@ -399,12 +402,13 @@ is_enter_pressed()
 ;
 *Enter::
     Send {Blind}{RControl Down}
-    KeyWait, Enter
     Return
 *Enter Up::
     Send {Blind}{RControl Up}
     If (A_PriorHotKey = "*Enter" And A_TimeSincePriorHotkey < 200) {
+        Suspend On
         Send {Blind}{Enter}
+        Suspend Off
     }
     Return
 
