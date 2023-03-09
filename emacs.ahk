@@ -389,7 +389,7 @@ is_enter_pressed()
     Return
 *LControl Up::
     Send {LControl Up}
-    If (A_PriorHotKey = "*LControl" And A_TimeSincePriorHotkey < 200) {
+    If (A_PriorKey == "LControl" And A_TimeSincePriorHotkey < 200) {
         Suspend On
         Send {Esc}
         Suspend Off
@@ -405,7 +405,7 @@ is_enter_pressed()
     Return
 *Enter Up::
     Send {Blind}{RControl Up}
-    If (A_PriorHotKey = "*Enter" And A_TimeSincePriorHotkey < 200) {
+    If (A_PriorKey == "Enter" And A_TimeSincePriorHotkey < 200) {
         Suspend On
         Send {Blind}{Enter}
         Suspend Off
